@@ -1,0 +1,21 @@
+#star pattern in triangle
+# row=5
+# for i in range(1,row+1):
+#    print(' '*(row-i)+'*'*(2*i-1))
+
+   #reverse trinagle using star pattern 
+# rows=5
+# for i in range(rows ,0,-1,):
+#    print(' '*(rows-i)+'*'*(2*i-1))
+
+#star pattern in dimaond shap
+
+rows=5
+#UPPER HALF
+for i in range(1,rows+1):
+    print(' '*(rows-1)+'*'*(2*i-1))
+#LOWER HALF
+
+
+for i in range(rows-1,0,-1,):
+    print(' '*(rows-1)+'*'*(2*i-1))

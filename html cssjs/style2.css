@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 102, 255, 0.233);
+  margin:0;
+  padding: 0;
+
+}
+
+ul{
+  display : flex;
+  background:rgb(128, 128, 128);
+  margin:0;
+  padding: 25px 0 ;
+  color: whitesmoke;
+  
+}
+ul li {
+    list-style: none;
+    margin: 0 23px;
+
+}

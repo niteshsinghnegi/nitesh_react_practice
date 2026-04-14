@@ -1,0 +1,16 @@
+#map function
+t=[5,4,8,6,9]
+
+squre= list(map(lambda x:x*x,t))
+
+print(squre)
+
+#filter function 
+m=[5,4,2,6,8,3]
+Enven=list(filter(lambda x:x%2==0,m))
+# print(Enven)
+
+from functools import reduce
+numbers=[2,6,5,3,5]
+sum=reduce(lambda x,y:x+y,numbers)
+print (sum)

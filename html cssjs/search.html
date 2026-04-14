@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Multiple Cards</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+
+<header>
+    <h1 id="mainTitle">DOM Multiple Cards Demo</h1>
+    <p>Access multiple cards using DOM</p>
+
+    <button class="btn" onclick="changeTitleColor()">Change Title Color</button>
+    <button class="btn" onclick="highlightAllCards()">Highlight All Cards</button>
+</header>
+
+<section class="container">
+
+    <div class="card cart">
+        <h2 class="cardTitle">Card 1</h2>
+        <p>This is first card</p>
+        <button class="btn" onclick="highlightOneCard(0)">Highlight</button>
+    </div>
+
+    <div class="card cart">
+        <h2 class="cardTitle">Card 2</h2>
+        <p>This is second card</p>
+        <button class="btn" onclick="highlightOneCard(1)">Highlight</button>
+    </div>
+
+    <div class="card cart">
+        <h2 class="cardTitle">Card 3</h2>
+        <p>This is third card</p>
+        <button class="btn" onclick="highlightOneCard(2)">Highlight</button>
+    </div>
+
+    <div class="card cart">
+        <h2 class="cardTitle">Card 4</h2>
+        <p>This is fourth card</p>
+        <button class="btn" onclick="highlightOneCard(3)">Highlight</button>
+    </div>
+
+</section>
+
+<script src="search.js"></script>
+</body>
+</html>

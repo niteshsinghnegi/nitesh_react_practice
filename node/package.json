@@ -1,0 +1,20 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "main": "modules.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "-": "^0.0.1",
+    "express": "^5.2.1",
+    "g": "^2.0.1",
+    "nodemon": "^3.1.11",
+    "pdf-creator-node": "^2.3.5"
+  }
+}

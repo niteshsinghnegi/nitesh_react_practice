@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Real Watch Clock</title>
+
+<style>
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle, #111, #000);
+        font-family: Arial, sans-serif;
+    }
+
+    .watch {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: #111;
+        border: 10px solid #555;
+        position: relative;
+        box-shadow: 0 0 30px rgba(0,255,255,0.4);
+    }
+
+    .center-dot {
+        width: 14px;
+        height: 14px;
+        background: cyan;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+    .hand {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform-origin: bottom;
+        transform: translateX(-50%);
+        border-radius: 10px;
+    }
+
+    .hour {
+        width: 6px;
+        height: 70px;
+        background: white;
+    }
+
+    .minute {
+        width: 4px;
+        height: 100px;
+        background: #00ffcc;
+    }
+
+    .second {
+        width: 2px;
+        height: 120px;
+        background: red;
+    }
+
+    .numbers span {
+        position: absolute;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .numbers span:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+    .numbers span:nth-child(2) { top: 50%; right: 10px; transform: translateY(-50%); }
+    .numbers span:nth-child(3) { bottom: 10px; left: 50%; transform: translateX(-50%); }
+    .numbers span:nth-child(4) { top: 50%; left: 10px; transform: translateY(-50%); }
+
+    .digital {
+        position: absolute;
+        bottom: 70px;
+        width: 100%;
+        text-align: center;
+        color: cyan;
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="watch">
+    <div class="numbers">
+        <span>12</span>
+        <span>3</span>
+        <span>6</span>
+        <span>9</span>
+    </div>
+
+    <div class="hand hour" id="hour"></div>
+    <div class="hand minute" id="minute"></div>
+    <div class="hand second" id="second"></div>
+
+    <div class="center-dot"></div>
+    <div class="digital" id="digital">00:00:00</div>
+</div>
+
+<script>
+    function runClock() {
+        const now = new Date();
+
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const hourDeg = (hours % 12) * 30 + minutes * 0.5;
+        const minuteDeg = minutes * 6;
+        const secondDeg = seconds * 6;
+
+        document.getElementById("hour").style.transform =
+            `translateX(-50%) rotate(${hourDeg}deg)`;
+
+        document.getElementById("minute").style.transform =
+            `translateX(-50%) rotate(${minuteDeg}deg)`;
+
+        document.getElementById("second").style.transform =
+            `translateX(-50%) rotate(${secondDeg}deg)`;
+
+        // Digital time
+        const h = hours < 10 ? "0" + hours : hours;
+        const m = minutes < 10 ? "0" + minutes : minutes;
+        const s = seconds < 10 ? "0" + seconds : seconds;
+
+        document.getElementById("digital").innerText = `${h}:${m}:${s}`;
+    }
+
+    setInterval(runClock, 1000);
+    runClock();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main(){
+    int a[50],i,key,n,c=0;
+    printf("enter the number of elements");
+    scanf("%d",&n);
+    printf("enter the elements/n");
+    for ( i = 0; i < n; i++)
+    
+     scanf("%d",&a[i]) ;
+       printf("enter the key elemnets/n");
+       for (i=0;i,n;i++)
+       scanf("%d",&key);
+       {
+        if(a[i]==0)
+        {
+            c++;
+            break;
+    {
+        if(c==1)
+        {
+        printf("search is successfull");
+        else 
+        printf("searsvh is unsccusessfull");
+        return 0;
+        }
+    }
+}
+       }
+    }
+    

@@ -1,0 +1,65 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full screen */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Courier New", monospace;
+}
+
+/* Body with Anonymous image */
+body {
+  color: #00ff00;
+  background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+    url("https://wallpapercave.com/wp/wp4016032.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Terminal text area */
+#Text {
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.7;
+  text-shadow: 0 0 6px #00ff00;
+}
+
+/* Scan line effect */
+#Text::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,0,0.04),
+    rgba(0,255,0,0.04) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+
+/* Blinking cursor */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background: #00ff00;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}

@@ -1,0 +1,61 @@
+# app.py
+from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
+import asyncio
+import random
+
+app = FastAPI()
+
+# Dummy buses
+buses = [{"bus_id": f"UP{100+i}B{1000+i}", "lat": 26.0+random.random(), "lon": 80.0+random.random()} for i in range(10)]
+
+html = """
+<!DOCTYPE html>
+<html>
+<head>
+<title>Real-time Bus Tracking</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<style>#map { height: 90vh; }</style>
+</head>
+<body>
+<h2>Real-time Bus Tracking Demo</h2>
+<div id="map"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+var map = L.map('map').setView([26.5, 80.5], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19}).addTo(map);
+
+var busMarkers = {};
+
+var ws = new WebSocket("ws://localhost:8000/ws");
+ws.onmessage = function(event){
+    var data = JSON.parse(event.data);
+    data.forEach(bus => {
+        if(bus.bus_id in busMarkers){
+            busMarkers[bus.bus_id].setLatLng([bus.lat, bus.lon]);
+        } else {
+            busMarkers[bus.bus_id] = L.marker([bus.lat, bus.lon]).addTo(map).bindPopup(bus.bus_id);
+        }
+    });
+};
+</script>
+</body>
+</html>
+"""
+
+@app.get("/")
+async def get():
+    return HTMLResponse(html)
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        # Simulate bus movement
+        for bus in buses:
+            bus["lat"] += random.uniform(-0.01, 0.01)
+            bus["lon"] += random.uniform(-0.01, 0.01)
+        await websocket.send_json(buses)
+        await asyncio.sleep(1)  # 1-second interval

@@ -1,0 +1,6 @@
+BusNumber,Route,CurrentStop,NextStop,Latitude,Longitude,Time
+UP32AB1234,Lucknow to Kanpur,Alambagh,Unnao,26.8467,80.9462,08:30
+UP65CD5678,Varanasi to Allahabad,Mughal Sarai,Handia,25.3176,82.9739,09:15
+UP14EF9012,Noida to Agra,Greater Noida,Jewar,28.5355,77.3910,10:05
+UP80GH3456,Agra to Mathura,Sikandra,Kosi Kalan,27.1767,78.0081,11:20
+UP16IJ7890,Meerut to Ghaziabad,Modinagar,Mohan Nagar,28.9845,77.7064,12:10

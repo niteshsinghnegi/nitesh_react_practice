@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zomato Style Food App | foodbynitesh</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{background:#f8f8f8}
+    .hero{background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;height:80vh;color:white}
+    .overlay{background:rgba(0,0,0,0.6);height:100%}
+    .restaurant-card img{height: 160px;object-fit:cover}
+    footer{background:#1c1c1c;color:#fff}
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1: HOME -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-4 fixed-top">
+  <a class="navbar-brand fw-bold" href="#home">FoodieZone</a>
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+    <li class="nav-item"><a class="nav-link" href="#orders">Orders</a></li>
+    <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="home" class="hero mt-5">
+  <div class="overlay d-flex align-items-center justify-content-center text-center">
+    <div>
+      <h1 class="display-4 fw-bold">Discover the best food & drinks</h1>
+      <input class="form-control mt-3" placeholder="Search for restaurant or dish">
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2: RESTAURANTS -->
+<section id="restaurants" class="container my-5">
+  <h2 class="mb-4">Popular Restaurants</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card restaurant-card">
+        <img src="https://images.unsplash.com/photo-1555992336-03a23c1f3c6f" class="card-img-top">
+        <div class="card-body">
+          <h5>Biryani House</h5>
+          <p>North Indian • ₹250 for one</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card restaurant-card">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" class="card-img-top">
+        <div class="card-body">
+          <h5>Pizza Hub</h5>
+          <p>Italian • ₹300 for one</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card restaurant-card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" class="card-img-top">
+        <div class="card-body">
+          <h5>Burger Point</h5>
+          <p>Fast Food • ₹150 for one</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3: ORDERS -->
+<section id="orders" class="container my-5">
+  <h2>Your Orders</h2>
+  <div class="alert alert-info">No orders yet. Start ordering delicious food!</div>
+</section>
+
+<!-- PAGE 4: LOGIN -->
+<section id="login" class="container my-5">
+  <h2>Login / Signup</h2>
+  <div class="card p-4 col-md-6">
+    <input class="form-control mb-3" placeholder="Email">
+    <input class="form-control mb-3" type="password" placeholder="Password">
+    <button class="btn btn-danger">Login</button>
+  </div>
+</section>
+
+<!-- PAGE 5: CONTACT -->
+<section id="contact" class="container my-5">
+  <h2>Contact Us</h2>
+  <input class="form-control mb-3" placeholder="Your Name">
+  <input class="form-control mb-3" placeholder="Email">
+  <textarea class="form-control mb-3" placeholder="Message"></textarea>
+  <button class="btn btn-dark">Submit</button>
+</section>
+
+<footer class="text-center p-4">
+  © 2026 FoodieZone | Zomato Style UI | Created by Nitesh Negi
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

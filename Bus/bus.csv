@@ -1,0 +1,4 @@
+bus_id,bus_number,latitude,longitude,status
+1,UP32AB1234,26.8467,80.9462,Running
+2,UP32CD5678,26.8470,80.9470,Running
+3,UP32EF9101,26.8480,80.9480,Stopped

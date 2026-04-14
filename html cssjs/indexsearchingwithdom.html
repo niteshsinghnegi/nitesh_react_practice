@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricketers Hub</title>
+    <link rel="stylesheet" href="searchinwithdom.css">
+</head>
+<body>
+
+<header>
+    <h1🏏 ID=title></title>Cricketers Hub</h1>
+    <p>Search & Filter Cricketers using DOM</p>
+</header>
+
+<div class="controls">
+    <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search cricketer..." 
+        onkeyup="liveSearch()">
+
+    <select id="countryFilter" onchange="filterCountry()">
+        <option value="all">All Countries</option>
+        <option value="india">India</option>
+
+        <option value="england">England</option>
+    </select>
+</div>
+
+<section class="container" id="cricketerList">
+
+    <div class="card cricketer india">
+        <img src="https://wallpaperaccess.com/full/9256804.jpg">
+        <h2 class="name">Virat Kohli</h2>
+        <p>India</p>
+    </div>
+
+    <div class="card cricketer india">
+        <img src="https://wallpapers.com/images/hd/ms-dhoni-jersey-number-seven-6y5b8bmmpwea3e7c.jpg">
+        <h2 class="name">MS Dhoni</h2>
+        <p>India</p>
+    </div>
+
+    <div class="card cricketer india">
+        <img src="https://wallpapers.com/images/hd/rohit-sharma-cricket-captain-gg4t07rve53522b7.jpg">
+        <h2 class="name">Rohit Sharma</h2>
+        <p>India</p>
+    </div>
+
+   
+
+    <div class="card cricketer england">
+        <img src="https://wallpapers.com/images/hd/joe-root-back-view-dveqv2nyc5bqsina.jpg">
+        <h2 class="name">Joe Root</h2>
+        <p>England</p>
+    </div>
+
+</section>
+
+<footer>
+    Created by ❤️ Nitesh Negi
+</footer>
+
+<script src="searchingwithdom.js></script>
+</body>
+</html>

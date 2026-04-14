@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Water Gun</title>
+</head>
+<body>
+
+<h2>Snake Water Gun Game</h2>
+
+<script>
+    let user = prompt("Enter S for Snake, W for Water, G for Gun");
+
+    if (user === null) {
+        alert("Game cancelled");
+    } else {
+        user = user.toUpperCase();
+
+        let choices = ["S", "W", "G"];
+        let computer = choices[Math.floor(Math.random() * 3)];
+
+        alert("You chose: " + user);
+        alert("Computer chose: " + computer);
+
+        if (user === computer) {
+            alert("Match Draw");
+        }
+        else if (
+            (user === "S" && computer === "W") ||
+            (user === "W" && computer === "G") ||
+            (user === "G" && computer === "S")
+        ) {
+            alert("You Win 🎉");
+        }
+        else {
+            alert("You Lose 😢");
+        }
+    }
+</script>
+
+</body>
+</html>

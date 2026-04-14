@@ -1,0 +1,18 @@
+#seek function
+# with open("file.txt",'r')as f:
+#     f.seek(10)
+
+#     data=f.read(6)
+#     print(data)
+
+    #tell()function
+# with open('file.txt','r')as f:
+#        data= f.read(10)
+#        current_position=f.tell()
+# print(current_position)
+
+with open('simple.txt','w')as f:
+    f.write("hello world")
+    f.truncate(5)
+    with open('sample.txt','r')as f:
+      print(f.read)

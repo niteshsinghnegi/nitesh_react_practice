@@ -1,0 +1,60 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contest App</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  >
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Contests</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container mt-4">
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="display-4">Nitesh Negi</h1>
+      <p class="lead">
+        Live Coding Contests using Fetch API & Bootstrap
+      </p>
+      <hr class="my-4">
+      <p>This data is loaded dynamically from an external API.</p>
+    </div>
+
+    <!-- Cards will be injected here by JavaScript -->
+    <div id="cardContainer" class="row"></div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="practicechap_p.js"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
