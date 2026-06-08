@@ -1,0 +1,186 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Folio — Resume Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!-- AMBIENT BACKGROUND -->
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-orb orb3"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="10" height="14" rx="1" fill="currentColor" opacity="0.9"/>
+          <rect x="18" y="4" width="10" height="6" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="18" y="14" width="10" height="14" rx="1" fill="currentColor" opacity="0.7"/>
+          <rect x="4" y="22" width="10" height="6" rx="1" fill="currentColor" opacity="0.4"/>
+        </svg>
+      </div>
+      <span class="brand-name">Folio</span>
+    </div>
+    <div class="nav-pill">
+      <span class="dot-live"></span>
+      <span>Live Preview</span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">ATS-Optimized Resume Builder</div>
+    <h1 class="hero-title">
+      Craft a resume that<br>
+      <em class="hero-accent">gets you hired</em>
+    </h1>
+    <p class="hero-sub">Professional. Precise. <span class="typing-wrap"><span class="typing"></span><span class="cursor-blink">|</span></span></p>
+  </section>
+
+  <!-- MAIN LAYOUT -->
+  <div class="container">
+
+    <!-- FORM PANEL -->
+    <aside class="form-panel">
+      <div class="panel-header">
+        <span class="panel-label">01 — Your Info</span>
+      </div>
+
+      <div class="field-group">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Jane Doe" autocomplete="off">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="jane@example.com" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="+1 (555) 000-0000" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="panel-header">
+        <span class="panel-label">02 — Summary</span>
+      </div>
+      <div class="field">
+        <textarea id="about" placeholder="A results-driven professional with..." rows="4"></textarea>
+      </div>
+
+      <div class="divider"></div>
+      <div class="panel-header">
+        <span class="panel-label">03 — Skills</span>
+      </div>
+      <div class="field">
+        <label for="skillInput">Add skill <span class="hint">↵ Enter to add</span></label>
+        <input type="text" id="skillInput" placeholder="e.g. React, Python, Figma…" autocomplete="off">
+        <div id="skillsContainer"></div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="panel-header">
+        <span class="panel-label">04 — Projects</span>
+      </div>
+      <div class="field">
+        <textarea id="projects" placeholder="Project Name — Description of what you built and the impact it had…" rows="4"></textarea>
+      </div>
+
+      <div class="divider"></div>
+      <div class="panel-header">
+        <span class="panel-label">05 — Education</span>
+      </div>
+      <div class="field">
+        <textarea id="education" placeholder="B.S. Computer Science — MIT, 2022" rows="3"></textarea>
+      </div>
+
+      <div class="divider"></div>
+
+      <button class="download-btn" onclick="downloadPDF()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        Export PDF
+      </button>
+    </aside>
+
+    <!-- PREVIEW PANEL -->
+    <main class="preview-wrap">
+      <div class="preview-toolbar">
+        <span class="toolbar-label">Preview</span>
+        <span class="toolbar-badge">ATS Friendly</span>
+      </div>
+
+      <div class="preview-shadow">
+        <div class="preview" id="resume">
+
+          <!-- RESUME HEADER -->
+          <div class="r-header">
+            <div class="r-name-block">
+              <h1 id="p_name" class="r-name">Your Name</h1>
+              <div class="r-contact">
+                <span id="p_email" class="r-contact-item">email@example.com</span>
+                <span class="r-sep">·</span>
+                <span id="p_phone" class="r-contact-item">+1 (555) 000-0000</span>
+              </div>
+            </div>
+            <div class="r-monogram" id="p_monogram">YN</div>
+          </div>
+
+          <div class="r-line"></div>
+
+          <!-- SUMMARY -->
+          <div class="r-section">
+            <div class="r-section-label">Summary</div>
+            <p id="p_about" class="r-body">A dedicated professional ready to make an impact.</p>
+          </div>
+
+          <!-- SKILLS -->
+          <div class="r-section">
+            <div class="r-section-label">Skills</div>
+            <p id="p_skills_text" class="r-body r-skills-list">—</p>
+          </div>
+
+          <!-- PROJECTS -->
+          <div class="r-section">
+            <div class="r-section-label">Projects</div>
+            <p id="p_projects" class="r-body">Your key projects will appear here.</p>
+          </div>
+
+          <!-- EDUCATION -->
+          <div class="r-section">
+            <div class="r-section-label">Education</div>
+            <p id="p_education" class="r-body">Your education will appear here.</p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Folio</span>
+      <p>Designed for modern professionals. ATS-optimized layouts that reach human eyes.</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
